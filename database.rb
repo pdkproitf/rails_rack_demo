@@ -16,4 +16,8 @@ class Database
   def self.rises
     RISES
   end
+
+  def self.add_rise(rise)
+    RISES.merge!(rise)
+  end
 end

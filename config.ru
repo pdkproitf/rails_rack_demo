@@ -3,10 +3,14 @@ require_relative 'rises_application'
 require_relative 'database'
 
 # run application
-map('/users') do
-  run UsersApplication.new
-end
+begin
+  map('/users') do
+    run UsersApplication.new
+  end
 
-map('/rises') do
-  run RisesApplication.new
+  map('/rises') do
+    run RisesApplication.new
+  end
+rescue Exception => e
+  p e.message
 end
